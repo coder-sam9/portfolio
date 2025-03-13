@@ -13,6 +13,7 @@ const ProjectsGrid = () => {
     const savedFilter = localStorage.getItem('selectedProjectType');
     return savedFilter || 'all';
   });
+  const [expandedProject, setExpandedProject] = useState(null);
 
   const projects = [
     {
@@ -21,7 +22,7 @@ const ProjectsGrid = () => {
       description: 'An AI-powered healthcare app available on Google Play Store and Apple App Store. Developed offline-capable features using localStorage and caching for seamless user access. Managed SQL database interactions and implemented native code for location permissions. Optimized Redux state management, reducing app load time by 20%.',
       techStack: ['React Native', 'Redux', 'SQL', 'localStorage', 'Caching'],
       image: midocLogo,
-      type: 'commercial',
+      type: 'company',
       link: 'www.midoc.ai'
     },
     {
@@ -64,7 +65,7 @@ const ProjectsGrid = () => {
 
   const projectTypes = [
     { id: 'all', label: 'All Projects' },
-    { id: 'commercial', label: 'Commercial' },
+    { id: 'company', label: 'Company' },
     { id: 'learning', label: 'Learning' },
     { id: 'vibe coding', label: 'Vibe Coding' }
   ];
@@ -110,7 +111,7 @@ const ProjectsGrid = () => {
   // Get badge styling based on project type
   const getBadgeStyle = (type) => {
     switch(type) {
-      case 'commercial':
+      case 'company':
         return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300 border border-purple-300 dark:border-purple-800';
       case 'learning':
         return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 border border-green-300 dark:border-green-800';
@@ -124,8 +125,8 @@ const ProjectsGrid = () => {
   // Get type label
   const getTypeLabel = (type) => {
     switch(type) {
-      case 'commercial':
-        return 'Commercial';
+      case 'company':
+        return 'Company';
       case 'learning':
         return 'Learning';
       case 'vibe coding':

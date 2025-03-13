@@ -9,13 +9,13 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
           <p className="text-gray-400">
-            &copy; {currentYear} John Doe. All rights reserved.
+            &copy; {currentYear} Sami Uddin. All rights reserved.
           </p>
         </div>
         
         <div className="flex space-x-6">
           <a 
-            href="https://github.com" 
+            href="https://github.com/coder-sam9" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
@@ -24,7 +24,7 @@ const Footer = () => {
             <FaGithub size={24} />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/sami-uddin-react/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
@@ -33,7 +33,7 @@ const Footer = () => {
             <FaLinkedin size={24} />
           </a>
           <a 
-            href="https://twitter.com" 
+            href="https://x.com/samiuddin_dev" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
@@ -42,7 +42,7 @@ const Footer = () => {
             <FaTwitter size={24} />
           </a>
           <a 
-            href="mailto:john@example.com" 
+            href="mailto:simplysam679@gmail.com" 
             className="text-gray-400 hover:text-white transition-colors"
             aria-label="Email"
           >

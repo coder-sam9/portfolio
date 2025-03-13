@@ -25,10 +25,10 @@ const HeroSection = () => {
           Hi, I'm <span className="animate-pulse">Sami Uddin</span>
         </h1>
         <h2 className="text-xl md:text-2xl text-gray-300 mt-2 mb-8">
-          React Developer
+          ReactJS/React Native Developer
         </h2>
         <p className="text-gray-200 mb-8 max-w-lg">
-          I build beautiful, responsive web applications with modern technologies.
+          I build beautiful, responsive applications with modern technologies.
           Let's work together to bring your ideas to life.
         </p>
         <motion.a 
