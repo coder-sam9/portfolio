@@ -19,16 +19,16 @@ const ProjectsGrid = () => {
     {
       id: 1,
       title: 'Midoc',
-      description: 'An AI-powered healthcare app available on Google Play Store and Apple App Store. Developed offline-capable features using localStorage and caching for seamless user access. Managed SQL database interactions and implemented native code for location permissions. Optimized Redux state management, reducing app load time by 20%.',
-      techStack: ['React Native', 'Redux', 'SQL', 'localStorage', 'Caching'],
+      description: 'An AI-powered healthcare app on Play Store and App Store. Added offline features and cut load times by 20%.',
+      techStack: ['React Native', 'Redux', 'localStorage', 'Caching'],
       image: midocLogo,
       type: 'company',
-      link: 'www.midoc.ai'
+      link: 'https://www.midoc.ai'
     },
     {
       id: 3,
       title: 'React Native User Management',
-      description: 'A personal project featuring user list and detail screens built with Redux Toolkit and API handling. Implemented sorting, filtering, error handling, and navigation for a smooth user experience.',
+      description: 'A personal project with user list and detail screens. Added sorting, filtering, and navigation.',
       techStack: ['React Native', 'Redux Toolkit', 'API Integration'],
       image: reactNaiveApp1,
       type: 'learning',
@@ -37,7 +37,7 @@ const ProjectsGrid = () => {
     {
       id: 4,
       title: 'Expense Tracker',
-      description: 'An in-progress React.js application with Redux state management. Features dynamic expense categorization, filtering, and data visualization to help users manage their finances effectively.',
+      description: 'An in-progress app with dynamic expense categorization and data visualization.',
       techStack: ['React.js', 'Redux', 'JavaScript'],
       image: expenseTracker,
       type: 'learning',
@@ -46,7 +46,7 @@ const ProjectsGrid = () => {
     {
       id: 5,
       title: 'React Native Insta Story Creator',
-      description: 'A creative app allowing drag & drop stickers with smooth animations using Animated and PanResponder. Enabled direct Instagram Story sharing through AndroidManifest modifications, showcasing expertise in gesture handling and native modules.',
+      description: 'A creative app with drag & drop stickers and Instagram Story sharing.',
       techStack: ['React Native', 'Animated', 'PanResponder', 'Native Modules'],
       image: storyCreator,
       type: 'learning',
@@ -55,7 +55,7 @@ const ProjectsGrid = () => {
     {
       id: 6,
       title: 'Portfolio Website',
-      description: 'A personal portfolio website showcasing my projects and technical skills, built with modern frontend technologies.',
+      description: 'A personal site showcasing my projects and skills.',
       techStack: ['React', 'Tailwind CSS', 'Framer Motion'],
       image: portfolio,
       type: 'vibe coding',
