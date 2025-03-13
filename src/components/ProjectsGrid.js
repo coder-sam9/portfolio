@@ -197,7 +197,7 @@ const ProjectsGrid = () => {
                     layout
                     className="bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
                   >
-                    <div className="h-48 overflow-hidden relative">
+                    <div className={`h-48 overflow-hidden relative `}>
                       <div className="absolute top-3 right-3 z-10">
                         <span className={`px-3 py-1.5 rounded-full font-medium text-xs ${getBadgeStyle(project.type)}`}>
                           {getTypeLabel(project.type)}
@@ -206,7 +206,7 @@ const ProjectsGrid = () => {
                       <motion.img 
                         src={project.image} 
                         alt={project.title} 
-                        className="w-full h-full p-4 object-contain"
+                        className={`w-full h-full p-4 object-contain ${project.id === 1 ? 'bg-white' : ''}`}
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                       />

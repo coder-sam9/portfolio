@@ -1,6 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import profilePic from "../assets/profile-pic.jpg";
+import resume from "../assets/download/Sami-Uddin-Resume.pdf";
+
+const LazyImage = ({ src, alt, className }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    const imgElement = document.getElementById(`lazy-image-${alt}`);
+    if (imgElement) {
+      observer.observe(imgElement);
+    }
+
+    return () => {
+      if (imgElement) {
+        observer.unobserve(imgElement);
+      }
+    };
+  }, [alt]);
+
+  return (
+    <img
+      id={`lazy-image-${alt}`}
+      src={isVisible ? src : ""}
+      alt={alt}
+      className={className}
+    />
+  );
+};
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +46,6 @@ const AboutSection = () => {
       const element = document.getElementById("about");
       if (element) {
         const position = element.getBoundingClientRect();
-        // If the element is in the viewport
         if (position.top < window.innerHeight && position.bottom >= 0) {
           setIsVisible(true);
         }
@@ -18,11 +53,14 @@ const AboutSection = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Check visibility on initial load
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleDownload = () => {
+    console.log("Resume downloaded");
+  };
 
   return (
     <section
@@ -42,7 +80,11 @@ const AboutSection = () => {
           <div className="flex flex-col md:flex-row md:justify-center content-center items-center md:items-start gap-10">
             <div className="w-full md:w-1/3 flex justify-center">
               <div className="w-64 h-64 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-600">
-                <img src={profilePic} alt="Sami Uddin" />
+                <LazyImage
+                  src={profilePic}
+                  alt="Sami Uddin"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -69,7 +111,9 @@ const AboutSection = () => {
                   <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </motion.a>
                 <motion.a
-                  href="#"
+                  href={resume}
+                  download="Sami-Uddin-Resume.pdf"
+                  onClick={handleDownload}
                   className="relative overflow-hidden bg-gradient-to-r from-gray-50 to-gray-200 dark:from-gray-700 dark:to-gray-800 text-gray-800 dark:text-white font-semibold px-8 py-3 rounded-lg border border-gray-300 dark:border-gray-600 shadow-sm hover:shadow-md transition-all duration-300 group"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
